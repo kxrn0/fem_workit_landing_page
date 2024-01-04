@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 46px;
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .hero-image {
+    width: 700px;
+    transform: translateY(50vh);
+    opacity: 0;
+    animation: from-below calc(3 * var(--duration)) forwards;
+
+    @media screen and (max-width: 1000px) {
+      width: 480px;
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 300px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    gap: 52px;
+  }
+
+  @media screen and (max-width: 500px) {
+    gap: 62px;
+  }
+}

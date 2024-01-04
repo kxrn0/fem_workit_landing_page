@@ -1,0 +1,51 @@
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  .image {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    opacity: 0;
+    animation: fade-in calc(2 * var(--duration)) forwards;
+
+    &.white {
+      top: 505px;
+      animation-delay: calc(2 * var(--duration));
+
+      @media screen and (max-width: 1200px) {
+        top: 405px;
+      }
+
+      @media screen and (max-width: 650px) {
+        top: 395px;
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+
+    &:first-of-type {
+      top: 116px;
+      left: -138px;
+    }
+
+    &:last-of-type {
+      top: 314px;
+      right: -48px;
+    }
+
+    g {
+      ellipse {
+        transform: translate(50vw);
+        animation: var(--delay) from-right 1s forwards;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+}

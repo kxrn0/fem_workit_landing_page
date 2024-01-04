@@ -1,0 +1,193 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: man;
+    src: url("../assets/fonts/manrope/Manrope-VariableFont_wght.ttf");
+    font-weight: 100 1000;
+  }
+
+  @font-face {
+    font-family: fren;
+    src: url("../assets/fonts/fraunces/Fraunces-VariableFont_SOFT.ttf");
+    font-weight: 600;
+  }
+}
+
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: man;
+    src: url("../assets/fonts/manrope/static/Manrope-Regular.ttf");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: man;
+    src: url("../assets/fonts/manrope/static/Manrope-Bold.ttf");
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: fren;
+    src: url("../assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf");
+  }
+}
+
+:root {
+  --dark-purple: 36, 5, 62;
+  --eucalyptus: 68, 255, 161;
+  --blue-gray: 88, 77, 98;
+  --dark-white: 253, 250, 255;
+  --white: 255, 255, 255;
+  --duration: 0.33s;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.fs-hl,
+.fs-hm,
+.fs-hs {
+  font-family: fren;
+}
+
+.fs-hl {
+  font-size: 80px;
+  line-height: 80px;
+
+  &.scalable {
+    @media screen and (max-width: 1000px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 50px;
+      line-height: 50px;
+    }
+  }
+}
+
+.fs-hm {
+  font-size: 56px;
+  line-height: 64px;
+}
+
+.fs-hs {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.fs-body {
+  font-family: man;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.button-primary,
+.button-secondary {
+  font-family: man;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: rgb(var(--eucalyptus));
+  color: rgb(var(--dark-purple));
+  border: 2px solid rgb(var(--eucalyptus));
+  padding: 13px 25px;
+  padding-bottom: 16px;
+  transition: color var(--duration), background-color var(--duration);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: transparent;
+      color: rgb(var(--eucalyptus));
+    }
+  }
+}
+
+.button-secondary {
+  color: rgb(var(--white));
+  position: relative;
+  transition: color var(--duration);
+
+  @media (hover: hover) {
+    &:hover {
+      color: rgb(var(--eucalyptus));
+    }
+  }
+
+  &::after {
+    content: "";
+    background: rgb(var(--eucalyptus));
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: 3px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes from-right {
+  from {
+    transform: translate(50vw);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes from-above {
+  from {
+    transform: translateY(-50vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes from-below {
+  from {
+    transform: translateY(50vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes expand-from-left {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
