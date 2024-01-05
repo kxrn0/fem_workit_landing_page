@@ -17,16 +17,6 @@
     border-radius: 100%;
     overflow: hidden;
 
-    &:hover {
-      .cell {
-        opacity: 1;
-
-        .inner {
-          transform: rotateY(180deg);
-        }
-      }
-    }
-
     .cell {
       --delay: 0;
       background-color: black;
@@ -60,6 +50,18 @@
 
           position: absolute;
           inset: 0;
+        }
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .cell {
+          opacity: 1;
+
+          .inner {
+            transform: rotateY(180deg);
+          }
         }
       }
     }
