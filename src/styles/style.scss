@@ -39,7 +39,7 @@
   padding-top: 90px;
   padding-bottom: 280px;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1300px) {
     padding-top: 55px;
     padding-bottom: 205px;
   }
@@ -155,5 +155,41 @@
     display: flex;
     justify-content: center;
     text-align: center;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 65px;
+  padding-top: 230px;
+  padding-bottom: 110px;
+
+  .socials {
+    display: flex;
+    gap: 30px;
+
+    svg {
+      &:hover {
+        path {
+          fill: rgb(var(--dark-purple));
+        }
+      }
+
+      path {
+        transition: fill var(--duration);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding-top: 320px;
+    padding-bottom: 121px;
+  }
+
+  @media screen and (max-width: 650px) {
+    padding-top: 395px;
+    padding-bottom: 63px;
   }
 }
