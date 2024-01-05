@@ -2,7 +2,7 @@
   --underlay: 0;
   color: white;
   width: 635px;
-  min-height: 160px;
+  min-height: 190px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -27,8 +27,8 @@
   }
 
   @media screen and (max-width: 1000px) {
-    width: 575px;
-    min-height: 120px;
+    width: 570px;
+    min-height: 140px;
     gap: 15px;
   }
 

@@ -4,4 +4,8 @@ import "./styles/style.scss";
 import "./styles/background.scss";
 import "./styles/navbar.scss";
 import "./styles/typing_animation.scss";
+import "./styles/observable.scss";
+import "./styles/image.scss"
 import "./javascripts/typing_animation";
+import "./javascripts/observable";
+import "./javascripts/image"

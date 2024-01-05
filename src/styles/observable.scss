@@ -1,0 +1,101 @@
+.observables {
+  color: rgb(var(--dark-purple));
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  text-align: center;
+
+  .observable {
+    --delay: 0;
+
+    &.observed {
+      .content {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 56px;
+      width: 355px;
+      opacity: 0;
+      transform: translateX(-10vw);
+      transition: transform calc(2 * var(--duration)),
+        opacity calc(2 * var(--duration));
+      transition-delay: var(--delay);
+
+      .number {
+        border: 1px solid rgb(var(--davys-gray));
+        min-width: 56px;
+        height: 56px;
+        display: grid;
+        place-items: center;
+        border-radius: 100%;
+
+        @media screen and (max-width: 1200px) {
+          min-width: 48px;
+          height: 48px;
+        }
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        @media screen and (max-width: 1200px) {
+          gap: 16px;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        flex-direction: row;
+        gap: 32px;
+        transition-duration: calc(3 * var(--duration));
+        transition-delay: 0s;
+        width: 575px;
+      }
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 24px;
+        width: 90vw;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      &:not(.observed) {
+        &:nth-child(even) {
+          .content {
+            @media screen and (max-width: 1200px) {
+              transform: translateX(100vw);
+            }
+          }
+        }
+
+        &:nth-child(odd) {
+          .content {
+            @media screen and (max-width: 1200px) {
+              transform: translateX(-100vw);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    text-align: start;
+  }
+
+  @media screen and (max-width: 600px) {
+    gap: 40px;
+    text-align: center;
+  }
+}

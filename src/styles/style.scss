@@ -34,3 +34,126 @@
     gap: 62px;
   }
 }
+
+.selling-points {
+  padding-top: 90px;
+  padding-bottom: 280px;
+
+  @media screen and (max-width: 1000px) {
+    padding-top: 55px;
+    padding-bottom: 205px;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding-top: 200px;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding-top: 65px;
+    padding-bottom: 175px;
+  }
+}
+
+.cta {
+  padding-left: 165px;
+
+  .content {
+    width: fit-content;
+    position: relative;
+
+    .image {
+      border-radius: 100%;
+      width: 480px;
+      height: 480px;
+
+      @media screen and (max-width: 1300px) {
+        width: 281px;
+        height: 281px;
+      }
+    }
+
+    .card {
+      background-color: rgb(var(--dark-purple));
+      color: white;
+      position: absolute;
+      top: 175px;
+      left: 385px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+      padding: 64px;
+      width: 730px;
+
+      svg {
+        position: absolute;
+        top: 265px;
+        left: 440px;
+
+        path {
+          --delay: 0;
+          animation: scale calc(3 * var(--duration)) alternate infinite;
+          animation-delay: var(--delay);
+          animation-play-state: paused;
+        }
+
+        @media screen and (max-width: 1300px) {
+          top: 270px;
+          left: 280px;
+        }
+
+        @media screen and (max-width: 650px) {
+          display: none;
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          svg {
+            path {
+              animation-play-state: running;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1300px) {
+        top: 150px;
+        left: 175px;
+        padding: 56px;
+        padding-top: 48px;
+        width: 515px;
+      }
+
+      @media screen and (max-width: 740px) {
+        gap: 24px;
+        left: 50px;
+      }
+
+      @media screen and (max-width: 650px) {
+        align-items: center;
+        top: 230px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 345px;
+        padding: 32px;
+        gap: 16px;
+
+        a {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    padding-left: 40px;
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}

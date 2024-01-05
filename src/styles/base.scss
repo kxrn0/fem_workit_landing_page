@@ -42,7 +42,7 @@
 :root {
   --dark-purple: 36, 5, 62;
   --eucalyptus: 68, 255, 161;
-  --blue-gray: 88, 77, 98;
+  --davys-gray: 88, 77, 98;
   --dark-white: 253, 250, 255;
   --white: 255, 255, 255;
   --duration: 0.33s;
@@ -54,7 +54,8 @@ body {
 
 .fs-hl,
 .fs-hm,
-.fs-hs {
+.fs-hs,
+.fs-ht {
   font-family: fren;
 }
 
@@ -78,11 +79,42 @@ body {
 .fs-hm {
   font-size: 56px;
   line-height: 64px;
+
+  &.scalable {
+    @media screen and (max-width: 1300px) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    @media screen and (max-width: 650px) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
 }
 
 .fs-hs {
   font-size: 32px;
   line-height: 40px;
+
+  &.scalable {
+    @media screen and (max-width: 1200px) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+}
+
+.fs-ht {
+  font-size: 24px;
+  line-height: 40px;
+
+  &.scalable {
+    @media screen and (max-width: 1200px) {
+      font-size: 20px;
+      line-height: 36px;
+    }
+  }
 }
 
 .fs-body {
@@ -90,6 +122,13 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 32px;
+
+  &.scalable {
+    @media screen and (max-width: 1200px) {
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
 }
 
 .button-primary,
@@ -189,5 +228,11 @@ body {
 
   to {
     transform: scaleX(1);
+  }
+}
+
+@keyframes scale {
+  to {
+    transform: scale(0.85);
   }
 }
